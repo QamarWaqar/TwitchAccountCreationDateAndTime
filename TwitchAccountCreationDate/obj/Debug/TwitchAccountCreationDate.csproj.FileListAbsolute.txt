@@ -1,0 +1,6 @@
+c:\users\terminator\documents\visual studio 2013\Projects\TwitchAccountCreationDate\TwitchAccountCreationDate\bin\Debug\TwitchAccountCreationDate.exe.config
+c:\users\terminator\documents\visual studio 2013\Projects\TwitchAccountCreationDate\TwitchAccountCreationDate\bin\Debug\TwitchAccountCreationDate.exe
+c:\users\terminator\documents\visual studio 2013\Projects\TwitchAccountCreationDate\TwitchAccountCreationDate\bin\Debug\TwitchAccountCreationDate.pdb
+c:\users\terminator\documents\visual studio 2013\Projects\TwitchAccountCreationDate\TwitchAccountCreationDate\obj\Debug\TwitchAccountCreationDate.exe
+c:\users\terminator\documents\visual studio 2013\Projects\TwitchAccountCreationDate\TwitchAccountCreationDate\obj\Debug\TwitchAccountCreationDate.pdb
+c:\users\terminator\documents\visual studio 2013\Projects\TwitchAccountCreationDate\TwitchAccountCreationDate\obj\Debug\TwitchAccountCreationDate.csprojResolveAssemblyReference.cache
