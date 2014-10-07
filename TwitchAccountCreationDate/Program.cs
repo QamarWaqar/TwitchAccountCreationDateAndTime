@@ -11,6 +11,21 @@ namespace TwitchAccountCreationDate
     {
         static void Main(string[] args)
         {
+            bool doAnother = true;
+            while (doAnother)
+            {
+                Program.fetchDateAndTime();
+
+                Console.Write("Do you want to do another (y/n): ");
+                ConsoleKeyInfo cKI = Console.ReadKey(false);
+                Console.Write('\n');
+                if (cKI.KeyChar != 'y')
+                { doAnother = false; }
+            }
+        }
+
+        static void fetchDateAndTime()
+        {
             System.Net.WebClient wC = new WebClient();
             wC.Headers.Add("Accept: application/vnd.twitchtv.v2+json");
             StringBuilder url = new StringBuilder("https://api.twitch.tv/kraken/users/");
@@ -68,7 +83,7 @@ namespace TwitchAccountCreationDate
             cT.Remove(cT.Length - 2, 2);
             cT.Remove(0, 1);
             int dotdot = 0;
-            foreach(var v in cT.ToString())
+            foreach (var v in cT.ToString())
             {
                 dotdot++;
                 if (dotdot == 1 || dotdot == 3 || dotdot == 5)
@@ -76,7 +91,6 @@ namespace TwitchAccountCreationDate
                 Console.Write(v);
             }
             Console.Write('\n');
-            Console.ReadKey();
         }
     }
 }
