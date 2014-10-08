@@ -11,16 +11,20 @@ namespace TwitchAccountCreationDate
     {
         static void Main(string[] args)
         {
-            bool doAnother = true;
-            while (doAnother)
+            bool isNetAvailable = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
+            if (isNetAvailable)
             {
-                Program.fetchDateAndTime();
+                bool doAnother = true;
+                while (doAnother)
+                {
+                    Program.fetchDateAndTime();
 
-                Console.Write("Do you want to do another (y/n): ");
-                ConsoleKeyInfo cKI = Console.ReadKey(false);
-                Console.Write('\n');
-                if (cKI.KeyChar != 'y')
-                { doAnother = false; }
+                    Console.Write("Do you want to do another (y/n): ");
+                    ConsoleKeyInfo cKI = Console.ReadKey(false);
+                    Console.Write('\n');
+                    if (cKI.KeyChar != 'y')
+                    { doAnother = false; }
+                }
             }
         }
 
