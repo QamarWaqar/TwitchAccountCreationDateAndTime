@@ -14,6 +14,7 @@ namespace TwitchAccountCreationDate
             bool isNetAvailable = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
             if (isNetAvailable)
             {
+                Console.WriteLine("You are Connected to internet.");
                 bool doAnother = true;
                 while (doAnother)
                 {
@@ -26,6 +27,7 @@ namespace TwitchAccountCreationDate
                     { doAnother = false; }
                 }
             }
+            else { Console.WriteLine("Sorry You are not Connected to Internet. Try Again Later. Press Any Key to Quit..."); Console.ReadKey(); }
         }
 
         static void fetchDateAndTime()
