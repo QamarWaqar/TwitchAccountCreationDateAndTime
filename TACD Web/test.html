@@ -1,0 +1,56 @@
+<html><head>
+<meta chatset="utf-8">
+<title>TITLE</title>
+</head>
+<body>
+<img id="i" src="">
+<p id="p"></p>
+<input id="t" type="text" value="Text Box">
+<input id="b" type="button" value="Button!">
+<input id="b1" style="display: none;" type="button" value="Clear!">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+// Document Ready Hide the clear button //
+$(document).ready(function(){
+$("#b1").hide("slow");
+});
+</script>
+
+<script>
+// when clear button is pressed text box shows button! shows clear button hides and document clears //
+$("#b1").click(function(){
+$("#t").show("slow"); $("#b").show("slow"); $("#b1").hide("slow");
+$("#i").attr("src",""); $("#p").html("");
+});
+</script>
+
+<script>
+// when text box is clicked the box is cleared of any previous text in it //
+$("#t").click(function(){
+$("#t").attr("value","");
+});
+</script>
+
+<script>
+// Text in textbox click button show picture and data hide button and textbox //
+$("#b").click(function(){
+
+var urlLink = "https://api.twitch.tv/kraken/channels/" + $("#t").val();
+$.getJSON( urlLink ,{
+Accept: "application/vnd.twitchtv.v2+json"
+}, function( resp ) {
+// Log each key in the response data
+$.each( resp, function( key, value ) {
+console.log( key + " : " + value ); $("#p").append( key + " : " + value + "<br/>" );
+if(key=="logo") { $( "#i" ).attr( "src", value ); }
+});
+});
+$("#b").hide("slow"); $("#t").hide("slow");
+$("#b1").show("slow");
+
+});
+</script>
+
+</body></html>

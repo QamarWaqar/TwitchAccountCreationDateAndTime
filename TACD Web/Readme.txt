@@ -1,0 +1,1 @@
+So I have Implemented the same C# project through web technologies, using jQuery from Google Hosted Libraries and Twitch API. Thats it. Done!!!
